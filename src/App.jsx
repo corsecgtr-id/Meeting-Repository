@@ -588,7 +588,7 @@ export default function App() {
         <div style={{ maxWidth: 1280, margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", padding: "0 24px", height: 64 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 12, cursor: "pointer" }} onClick={() => nav("beranda")}>
             <div style={{ width: 40, height: 40, borderRadius: "50%", background: "#D9001B", display: "flex", alignItems: "center", justifyContent: "center", color: "#fff", fontWeight: 800, fontSize: 14, letterSpacing: 1 }}>GTR</div>
-            <div><div style={{ color: "#fff", fontSize: 16, fontWeight: 700, lineHeight: 1.2 }}>GastroNotes</div><div style={{ color: "rgba(255,255,255,0.6)", fontSize: 11 }}>Repositori Meeting — PT Gastron Indo Energi</div></div>
+            <div><div style={{ color: "#fff", fontSize: 16, fontWeight: 700, lineHeight: 1.2 }}>Gastron Indo Energi</div><div style={{ color: "rgba(255,255,255,0.6)", fontSize: 11 }}>Repositori Meeting</div></div>
           </div>
           <div className="nav-desktop" style={{ display: "flex", gap: 4 }}>
             {navItems.map(n => <button key={n.id} onClick={() => nav(n.id)} style={{ background: page === n.id ? "rgba(255,255,255,0.15)" : "transparent", color: "#fff", border: "none", padding: "8px 16px", borderRadius: 8, cursor: "pointer", fontSize: 14, fontWeight: page === n.id ? 600 : 400, display: "flex", alignItems: "center", gap: 6, whiteSpace: "nowrap" }}>{n.icon} {n.label}</button>)}
@@ -606,7 +606,7 @@ export default function App() {
         {page === "dashboard" && <PageDashboard meetings={meetings} dokumen={dokumen} />}
         {page === "admin" && <PageAdmin isAdmin={isAdmin} setIsAdmin={setIsAdmin} meetings={meetings} setMeetings={setMeetings} dokumen={dokumen} setDokumen={setDokumen} />}
       </div>
-      <footer style={{ background: "#000170", color: "rgba(255,255,255,0.5)", textAlign: "center", padding: 20, fontSize: 13 }}>&copy; 2026 GastroNotes &mdash; Repositori Meeting — PT Gastron Indo Energi</footer>
+      <footer style={{ background: "#000170", color: "rgba(255,255,255,0.5)", textAlign: "center", padding: 20, fontSize: 13 }}>&copy; 2026 Gastron Indo Energi &mdash; Repositori Meeting</footer>
     </div>
   );
 }
@@ -619,7 +619,7 @@ function PageBeranda({ meetings, dokumen, navigate, onView }) {
   return (
     <div>
       <div style={{ background: "#fff", borderRadius: 16, padding: "48px 32px 40px", marginBottom: 24, boxShadow: "0 1px 4px rgba(0,0,0,0.06)", textAlign: "center", border: "1px solid rgba(0,1,112,0.06)" }}>
-        <h1 style={{ fontSize: 28, fontWeight: 800, color: "#000170", marginBottom: 8 }}>GastroNotes Organisasi</h1>
+        <h1 style={{ fontSize: 28, fontWeight: 800, color: "#000170", marginBottom: 8 }}>Gastron Meeting Repository</h1>
         <p style={{ color: "#666", marginBottom: 28, fontSize: 15 }}>Telusuri kembali notulensi, keputusan, dan dokumen meeting organisasi Anda</p>
         <div style={{ display: "flex", gap: 12, maxWidth: 640, margin: "0 auto" }}>
           <input style={inputStyle} placeholder="Cari meeting berdasarkan judul, peserta, atau kata kunci..." value={q} onChange={e => setQ(e.target.value)} onKeyDown={e => e.key === "Enter" && navigate("katalog")} />
